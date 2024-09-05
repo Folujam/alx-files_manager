@@ -2,7 +2,7 @@ const dbClient = require('../utils/db');
 const redisClient = require('../utils/redis');
 
 class AppController {
-  constructor() {
+  constructor({ dbClient, redisClient }) {
     this.dbClient = dbClient;
     this.redisClient = redisClient;
   }
@@ -22,4 +22,4 @@ class AppController {
   }
 }
 
-module.exports = new AppController();
+module.exports = new AppController({ dbClient, redisClient });
